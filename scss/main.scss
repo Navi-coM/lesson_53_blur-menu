@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    @media screen and (max-width: 992px) {
+        padding: 0 17px;
+    }
+}
+
+.header {
+    background: #ffffff;
+    padding: 41px 0;
+    position: relative;
+
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: 80px;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+
+
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        right: -100%;
+        top: 100px;
+        flex-direction: column;
+        background: #ffddff;
+        padding: 0 0;
+        width: 40%;
+        gap: 0;
+
+        transition: all 0.6s;
+
+    }
+
+    &__item {
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: inset 0 0 4px 0px #583e58;
+        }
+    }
+
+    &__link {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 30%;
+
+        text-decoration: none;
+        color: #000;
+
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -8px;
+            bottom: -7px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background-color: #000;
+
+            transition: all 0.5s;
+        }
+
+        &:hover::after {
+            width: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+    }
+}
+
+
+.burger {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        &:checked~.menu {
+            // opacity: 1;
+            right: 0;
+        }
+
+        // Написати код , при натисканні на бургер, повинна з'явитися меню
+
+
+    }
+
+
+    &__img {
+        display: none;
+        cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+            display: inline-block;
+            position: relative;
+            height: 2px;
+            width: 36px;
+            background-color: #222121;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            height: 2px;
+            background-color: #222121;
+        }
+
+        &::before {
+            top: -10px;
+        }
+
+    }
+}
+
+.first-scr {
+    height: 654px;
+    background: url('../assets/img/background_first_screen.png') no-repeat;
+}
